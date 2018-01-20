@@ -8,6 +8,38 @@ import sys
 from lxml import etree
 
 
+def get_single_element(parent, tag, schema):
+    elements = parent.findall("{%s}%s" % (schema, tag))
+    if len(elements) != 1:
+        raise Exception("Expected one match for tag '%s', found %i" % (tag, len(elements)))
+    return elements[0]
+
+
+class TableParser:
+
+    def __init__(self, table):
+        self.table = table
+
+    def parse_head(self):
+        thead = get_single_element(self.table, 'thead', 'http://www.w3.org/1999/xhtml')
+        headers = []
+        for th in thead[0]:
+            text = "".join(th.itertext())
+            text = re.sub('\s+', ' ', text).strip()
+            headers.append(text)
+        return tuple(th for th in headers)
+
+    def parse_body(self):
+        tbody = get_single_element(self.table, 'tbody', 'http://www.w3.org/1999/xhtml')
+        data = []
+        for row in tbody:
+            data.append(tuple(col.text for col in row))
+        return data
+
+    def parse(self):
+        return [self.parse_head()] + self.parse_body()
+
+
 class EcoParser:
 
     default_schema = "http://www.legislation.gov.uk/namespaces/legislation"
@@ -23,21 +55,11 @@ class EcoParser:
     def _get_single_element(self, parent, tag, schema=None):
         if not schema:
             schema = self.default_schema
-        elements = parent.findall("{%s}%s" % (schema, tag))
-        if len(elements) != 1:
-            raise Exception("Expected one match for tag '%s', found %i" % (tag, len(elements)))
-        return elements[0]
+        return get_single_element(parent, tag, schema)
 
     def _parse_table(self, table):
-        thead = self._get_single_element(table, 'thead', 'http://www.w3.org/1999/xhtml')
-        # TODO: parse headers
-
-        tbody = self._get_single_element(table, 'tbody', 'http://www.w3.org/1999/xhtml')
-
-        data = []
-        for row in tbody:
-            data.append(tuple(col.text for col in row))
-        return data
+        p = TableParser(table)
+        return p.parse()
 
     def parse_schedule(self):
         tree = etree.fromstring(self.get_data())
