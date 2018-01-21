@@ -6,3 +6,9 @@ __pycache__/
 build/
 dist/
 eco_parser.egg-info/
+
+# pipenv lockfile
+Pipfile.lock
+
+# test coverage
+.coverage

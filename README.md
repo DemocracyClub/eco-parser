@@ -1,5 +1,8 @@
 # ECO Parser
 
+[![Build Status](https://travis-ci.org/DemocracyClub/eco-parser.svg?branch=master)](https://travis-ci.org/DemocracyClub/eco-parser)
+[![Coverage Status](https://coveralls.io/repos/github/DemocracyClub/eco-parser/badge.svg?branch=master)](https://coveralls.io/github/DemocracyClub/eco-parser?branch=master)
+
 Parse ward lists from Electoral Change Orders on http://www.legislation.gov.uk/
 
 ## Installation
