@@ -8,10 +8,14 @@ import sys
 from lxml import etree
 
 
+class ParseError(Exception):
+    pass
+
+
 def get_single_element(parent, tag, schema):
     elements = parent.findall("{%s}%s" % (schema, tag))
     if len(elements) != 1:
-        raise Exception("Expected one match for tag '%s', found %i" % (tag, len(elements)))
+        raise ParseError("Expected one match for tag '%s', found %i" % (tag, len(elements)))
     return elements[0]
 
 
@@ -82,7 +86,7 @@ class EcoParser:
         elif re.match(article_pattern, self.url):
             return self.parse_article()
         else:
-            raise Exception('Could not find a suitable parser for %s' % (self.url))
+            raise ParseError('Could not find a suitable parser for %s' % (self.url))
 
 
 if __name__ == '__main__':
