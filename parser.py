@@ -110,7 +110,11 @@ class EcoParser:
         return p.parse()
 
     def parse_article(self):
-        raise NotImplementedError('TODO')
+        tree = etree.fromstring(self.get_data())
+        secondary = get_single_element(tree, 'Secondary')
+        body = get_single_element(secondary, 'Body')
+        p = ElementParserFactory.create(body)
+        return p.parse()
 
     def parse(self):
         schedule_pattern = r'http[s]?\:\/\/(www\.)?legislation\.gov\.uk\/(.)+\/schedule\/(.)+\/data\.xml'
