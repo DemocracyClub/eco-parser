@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Legislation xmlns="http://www.legislation.gov.uk/namespaces/legislation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" DocumentURI="http://www.legislation.gov.uk/uksi/2017/477/made" IdURI="http://www.legislation.gov.uk/id/uksi/2017/477" NumberOfProvisions="43" xsi:schemaLocation="http://www.legislation.gov.uk/namespaces/legislation http://www.legislation.gov.uk/schema/legislation.xsd" SchemaVersion="1.0" xml:base="http://www.legislation.gov.uk/id/uksi/2017/477">
+  <ukm:Metadata xmlns:ukm="http://www.legislation.gov.uk/namespaces/metadata" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dct="http://purl.org/dc/terms/">
+    <dc:identifier>http://www.legislation.gov.uk/uksi/2017/477/schedule/1/made</dc:identifier>
+    <dc:title>The Foo Town (Electoral Changes) Order 2017</dc:title>
+    <dc:language>en</dc:language>
+    <dc:publisher>Queen's Printer of Acts of Parliament</dc:publisher>
+    <dc:modified>2017-03-28</dc:modified>
+    <dc:subject scheme="SIheading">LOCAL GOVERNMENT, ENGLAND</dc:subject>
+    <dc:description>This Order makes changes to electoral arrangements for the borough of Harrogate following recommendations made by the Local Government Boundary Commission for England. The area of the borough remains unchanged. The changes which articles 2 and 3 introduce begin to apply to local government elections in 2018.</dc:description>
+    <atom:link rel="self" type="application/xml" href="http://www.legislation.gov.uk/uksi/2017/477/schedule/1/made/data.xml" />
+    <atom:link rel="http://www.legislation.gov.uk/def/navigation/resources" href="http://www.legislation.gov.uk/uksi/2017/477/resources" title="More Resources" />
+    <atom:link rel="http://www.legislation.gov.uk/def/navigation/memorandum" href="http://www.legislation.gov.uk/uksi/2017/477/memorandum" title="Explanatory Memorandum" />
+    <atom:link rel="http://www.legislation.gov.uk/def/navigation/memorandum/toc" href="http://www.legislation.gov.uk/uksi/2017/477/memorandum/contents" title="Explanatory Memorandum Table of Contents" />
+    <atom:link rel="http://www.legislation.gov.uk/def/navigation/act" href="http://www.legislation.gov.uk/uksi/2017/477/made" title="whole act" />
+    <atom:link rel="http://www.legislation.gov.uk/def/navigation/introduction" href="http://www.legislation.gov.uk/uksi/2017/477/introduction/made" title="introduction" />
+    <atom:link rel="http://www.legislation.gov.uk/def/navigation/signature" href="http://www.legislation.gov.uk/uksi/2017/477/signature/made" title="signature" />
+    <atom:link rel="http://www.legislation.gov.uk/def/navigation/note" href="http://www.legislation.gov.uk/uksi/2017/477/note/made" title="note" />
+    <atom:link rel="http://www.legislation.gov.uk/def/navigation/body" href="http://www.legislation.gov.uk/uksi/2017/477/body/made" title="body" />
+    <atom:link rel="http://www.legislation.gov.uk/def/navigation/schedules" href="http://www.legislation.gov.uk/uksi/2017/477/schedules/made" title="schedules" />
+    <atom:link rel="alternate" type="application/rdf+xml" href="http://www.legislation.gov.uk/uksi/2017/477/schedule/1/made/data.rdf" title="RDF/XML" />
+    <atom:link rel="alternate" type="application/akn+xml" href="http://www.legislation.gov.uk/uksi/2017/477/schedule/1/made/data.akn" title="AKN" />
+    <atom:link rel="alternate" type="application/xhtml+xml" href="http://www.legislation.gov.uk/uksi/2017/477/schedule/1/made/data.xht" title="HTML snippet" />
+    <atom:link rel="alternate" type="application/pdf" href="http://www.legislation.gov.uk/uksi/2017/477/schedule/1/made/data.pdf" title="PDF" />
+    <atom:link rel="alternate" type="application/akn+xhtml" href="http://www.legislation.gov.uk/uksi/2017/477/schedule/1/made/data.html" title="HTML5 snippet" />
+    <atom:link rel="http://purl.org/dc/terms/tableOfContents" hreflang="en" href="http://www.legislation.gov.uk/uksi/2017/477/contents/made" title="Table of Contents" />
+    <atom:link rel="http://www.legislation.gov.uk/def/navigation/supersedes" href="http://www.legislation.gov.uk/id/ukdsi/2017/9780111153697" title="The Harrogate (Electoral Changes) Order 2017" />
+    <atom:link rel="up" href="http://www.legislation.gov.uk/uksi/2017/477/made" title="Entire legislation" />
+    <atom:link rel="prev" href="http://www.legislation.gov.uk/uksi/2017/477/signature/made" title="Signature; Signature" />
+    <atom:link rel="prevInForce" href="http://www.legislation.gov.uk/uksi/2017/477/article/3/made" title="Provision; Article 3" />
+    <atom:link rel="next" href="http://www.legislation.gov.uk/uksi/2017/477/schedule/2/made" title="Schedule; Schedule 2" />
+    <atom:link rel="nextInForce" href="http://www.legislation.gov.uk/uksi/2017/477/schedule/2/made" title="Schedule; Schedule 2" />
+    <ukm:SecondaryMetadata>
+      <ukm:DocumentClassification>
+        <ukm:DocumentCategory Value="secondary" />
+        <ukm:DocumentMainType Value="UnitedKingdomStatutoryInstrument" />
+        <ukm:DocumentStatus Value="final" />
+        <ukm:DocumentMinorType Value="order" />
+      </ukm:DocumentClassification>
+      <ukm:Year Value="2017" />
+      <ukm:Number Value="477" />
+      <ukm:Made Date="2017-03-27" />
+      <ukm:ISBN Value="9780111157350" />
+    </ukm:SecondaryMetadata>
+    <ukm:Supersedes URI="http://www.legislation.gov.uk/id/ukdsi/2017/9780111153697">
+      <dc:title>The Harrogate (Electoral Changes) Order 2017</dc:title>
+      <ukm:DocumentMainType Value="UnitedKingdomDraftStatutoryInstrument" />
+      <ukm:Year Value="2017" />
+      <ukm:ISBN Value="9780111153697" />
+    </ukm:Supersedes>
+    <ukm:Notes>
+      <ukm:Note IdURI="http://www.legislation.gov.uk/id/uksi/2017/477/notes" />
+      <ukm:Alternatives>
+        <ukm:Alternative URI="http://www.legislation.gov.uk/uksi/2017/477/pdfs/uksiem_20170477_en.pdf" Date="2017-03-30" Title="UK Explanatory Memorandum" Size="37159" />
+      </ukm:Alternatives>
+    </ukm:Notes>
+    <ukm:Alternatives>
+      <ukm:Alternative URI="http://www.legislation.gov.uk/uksi/2017/477/pdfs/uksi_20170477_en.pdf" Date="2017-03-30" Size="43583" />
+    </ukm:Alternatives>
+    <ukm:Statistics>
+      <ukm:TotalParagraphs Value="43" />
+      <ukm:BodyParagraphs Value="3" />
+      <ukm:ScheduleParagraphs Value="40" />
+      <ukm:TotalImages Value="0" />
+    </ukm:Statistics>
+  </ukm:Metadata>
+  <Secondary>
+    <Schedules>
+      <Schedule DocumentURI="http://www.legislation.gov.uk/uksi/2017/477/schedule/1/made" IdURI="http://www.legislation.gov.uk/id/uksi/2017/477/schedule/1" NumberOfProvisions="40" id="schedule-1">
+        <Number>SCHEDULE 1</Number>
+        <TitleBlock>
+          <Title>Names of wards</Title>
+        </TitleBlock>
+        <Reference>Article 2</Reference>
+        <ScheduleBody>
+          <P1 DocumentURI="http://www.legislation.gov.uk/uksi/2017/477/schedule/1/paragraph/1/made" IdURI="http://www.legislation.gov.uk/id/uksi/2017/477/schedule/1/paragraph/1" id="schedule-1-paragraph-1">
+            <Pnumber>1</Pnumber>
+            <P1para>
+              <Text>Crummock &amp; Derwent Valley.</Text>
+            </P1para>
+          </P1>
+          <P1 DocumentURI="http://www.legislation.gov.uk/uksi/2017/477/schedule/1/paragraph/1/made" IdURI="http://www.legislation.gov.uk/id/uksi/2017/477/schedule/1/paragraph/1" id="schedule-1-paragraph-2">
+            <Pnumber>2</Pnumber>
+            <P1para>
+              <Text>St John’s.</Text>
+            </P1para>
+          </P1>
+          <P1 DocumentURI="http://www.legislation.gov.uk/uksi/2017/477/schedule/1/paragraph/1/made" IdURI="http://www.legislation.gov.uk/id/uksi/2017/477/schedule/1/paragraph/1" id="schedule-1-paragraph-3">
+            <Pnumber>3</Pnumber>
+            <P1para>
+              <Text>Warnell.</Text>
+            </P1para>
+          </P1>
+          <P1 DocumentURI="http://www.legislation.gov.uk/uksi/2017/477/schedule/1/paragraph/1/made" IdURI="http://www.legislation.gov.uk/id/uksi/2017/477/schedule/1/paragraph/1" id="schedule-1-paragraph-4">
+            <Pnumber>4</Pnumber>
+            <P1para>
+              <Text>Westward Ho!</Text>
+            </P1para>
+          </P1>
+          <P1 DocumentURI="http://www.legislation.gov.uk/uksi/2017/477/schedule/1/paragraph/1/made" IdURI="http://www.legislation.gov.uk/id/uksi/2017/477/schedule/1/paragraph/1" id="schedule-1-paragraph-5">
+            <Pnumber>5</Pnumber>
+            <P1para>
+              <Text>Audley &amp; Queen’s Park.</Text>
+            </P1para>
+          </P1>
+        </ScheduleBody>
+      </Schedule>
+    </Schedules>
+  </Secondary>
+</Legislation>
