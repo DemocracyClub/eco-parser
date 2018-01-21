@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 
+import abc
 import argparse
 import csv
 import re
@@ -8,24 +9,50 @@ import sys
 from lxml import etree
 
 
-class ParseError(Exception):
-    pass
+DEFAULT_SCHEMA = "http://www.legislation.gov.uk/namespaces/legislation"
 
 
-def get_single_element(parent, tag, schema):
+def get_single_element(parent, tag, schema=None):
+    if not schema:
+        schema = DEFAULT_SCHEMA
+
     elements = parent.findall("{%s}%s" % (schema, tag))
     if len(elements) != 1:
         raise ParseError("Expected one match for tag '%s', found %i" % (tag, len(elements)))
     return elements[0]
 
 
-class TableParser:
+def get_elements_recursive(parent, tag, schema=None):
+    if not schema:
+        schema = DEFAULT_SCHEMA
 
-    def __init__(self, table):
-        self.table = table
+    data = []
+    target = "{%s}%s" % (schema, tag)
+    for child in parent:
+        if (child.tag == target):
+            data.append(child)
+        data = data + get_elements_recursive(child, tag, schema)
+    return data
+
+
+class ParseError(Exception):
+    pass
+
+
+class ElementParser(metaclass=abc.ABCMeta):
+
+    def __init__(self, element):
+        self.element = element
+
+    @abc.abstractmethod
+    def parse(self):
+        pass
+
+
+class TableParser(ElementParser):
 
     def parse_head(self):
-        thead = get_single_element(self.table, 'thead', 'http://www.w3.org/1999/xhtml')
+        thead = get_single_element(self.element, 'thead', schema='http://www.w3.org/1999/xhtml')
         headers = []
         for th in thead[0]:
             text = "".join(th.itertext())
@@ -34,7 +61,7 @@ class TableParser:
         return tuple(th for th in headers)
 
     def parse_body(self):
-        tbody = get_single_element(self.table, 'tbody', 'http://www.w3.org/1999/xhtml')
+        tbody = get_single_element(self.element, 'tbody', schema='http://www.w3.org/1999/xhtml')
         data = []
         for row in tbody:
             data.append(tuple(col.text for col in row))
@@ -44,9 +71,26 @@ class TableParser:
         return [self.parse_head()] + self.parse_body()
 
 
-class EcoParser:
+class BodyParser(ElementParser):
 
-    default_schema = "http://www.legislation.gov.uk/namespaces/legislation"
+    def parse(self):
+        elements = get_elements_recursive(self.element, 'Text')
+        return [(el.text.strip().rstrip(',.;'),) for el in elements]
+
+
+class ElementParserFactory:
+
+    @staticmethod
+    def create(element):
+        try:
+            tabular = get_single_element(element, 'Tabular')
+            table = get_single_element(tabular, 'table', schema='http://www.w3.org/1999/xhtml')
+            return TableParser(table)
+        except ParseError:
+            return BodyParser(element)
+
+
+class EcoParser:
 
     def __init__(self, url):
         self.url = url
@@ -56,24 +100,14 @@ class EcoParser:
         r.raise_for_status()
         return r.content
 
-    def _get_single_element(self, parent, tag, schema=None):
-        if not schema:
-            schema = self.default_schema
-        return get_single_element(parent, tag, schema)
-
-    def _parse_table(self, table):
-        p = TableParser(table)
-        return p.parse()
-
     def parse_schedule(self):
         tree = etree.fromstring(self.get_data())
-        secondary = self._get_single_element(tree, 'Secondary')
-        schedules = self._get_single_element(secondary, 'Schedules')
-        schedule = self._get_single_element(schedules, 'Schedule')
-        schedule_body = self._get_single_element(schedule, 'ScheduleBody')
-        tabular = self._get_single_element(schedule_body, 'Tabular')
-        table = self._get_single_element(tabular, 'table', 'http://www.w3.org/1999/xhtml')
-        return self._parse_table(table)
+        secondary = get_single_element(tree, 'Secondary')
+        schedules = get_single_element(secondary, 'Schedules')
+        schedule = get_single_element(schedules, 'Schedule')
+        schedule_body = get_single_element(schedule, 'ScheduleBody')
+        p = ElementParserFactory.create(schedule_body)
+        return p.parse()
 
     def parse_article(self):
         raise NotImplementedError('TODO')
