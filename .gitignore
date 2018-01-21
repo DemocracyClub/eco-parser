@@ -1,3 +1,8 @@
 # python cache files
 __pycache__/
 *.pyc
+
+# build artifacts
+build/
+dist/
+eco_parser.egg-info/
