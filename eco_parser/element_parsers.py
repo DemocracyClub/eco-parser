@@ -28,7 +28,12 @@ class TableParser(ElementParser):
         tbody = get_single_element(self.element, 'tbody', schema='http://www.w3.org/1999/xhtml')
         data = []
         for row in tbody:
-            data.append(tuple(col.text for col in row))
+            record = tuple(
+                col.text for col in row
+                if col.tag == '{http://www.w3.org/1999/xhtml}td'
+            )
+            if record:
+                data.append(record)
         return data
 
     def parse(self):
