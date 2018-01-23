@@ -5,7 +5,10 @@ DEFAULT_SCHEMA = "http://www.legislation.gov.uk/namespaces/legislation"
 
 
 class ParseError(Exception):
-    pass
+
+    def __init__(self, message, matches):
+        super().__init__(message)
+        self.matches = matches
 
 
 def get_single_element(parent, tag, schema=None):
@@ -14,7 +17,10 @@ def get_single_element(parent, tag, schema=None):
 
     elements = parent.findall("{%s}%s" % (schema, tag))
     if len(elements) != 1:
-        raise ParseError("Expected one match for tag '%s', found %i" % (tag, len(elements)))
+        raise ParseError(
+            "Expected one match for tag '%s', found %i" % (tag, len(elements)),
+            len(elements)
+        )
     return elements[0]
 
 

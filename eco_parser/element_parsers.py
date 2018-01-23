@@ -64,5 +64,8 @@ class ElementParserFactory:
             tabular = get_single_element(element, 'Tabular')
             table = get_single_element(tabular, 'table', schema='http://www.w3.org/1999/xhtml')
             return TableParser(table)
-        except ParseError:
-            return BodyParser(element)
+        except ParseError as e:
+            if e.matches == 0:
+                return BodyParser(element)
+            else:
+                raise
