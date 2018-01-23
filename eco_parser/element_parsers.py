@@ -42,7 +42,11 @@ class TableParser(ElementParser):
         return data
 
     def parse(self):
-        return [self.parse_head()] + self.parse_body()
+        try:
+            header = [self.parse_head()]
+        except ParseError:
+            header = []
+        return header + self.parse_body()
 
 
 class BodyParser(ElementParser):
