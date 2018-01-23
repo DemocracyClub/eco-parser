@@ -24,16 +24,19 @@ class TableParser(ElementParser):
             headers.append(text)
         return tuple(th for th in headers)
 
+    def is_header(self, row):
+        header_row = False
+        for col in row:
+            if col.tag == '{http://www.w3.org/1999/xhtml}th':
+                header_row = True
+        return header_row
+
     def parse_body(self):
         tbody = get_single_element(self.element, 'tbody', schema='http://www.w3.org/1999/xhtml')
         data = []
         for row in tbody:
-            record = tuple(
-                col.text for col in row
-                if col.tag == '{http://www.w3.org/1999/xhtml}td'
-            )
-            if record:
-                data.append(record)
+            if not self.is_header(row):
+                data.append(tuple(col.text for col in row))
         return data
 
     def parse(self):

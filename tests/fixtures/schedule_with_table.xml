@@ -122,7 +122,7 @@
                 </tr>
                 <tr>
                   <th rowspan="1" colspan="1">Sub Heading 2</th>
-                  <th rowspan="1" colspan="1"/>
+                  <td rowspan="1" colspan="1"/>
                 </tr>
                 <tr>
                   <td rowspan="1" colspan="1">Warnell</td>
