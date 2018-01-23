@@ -1,3 +1,6 @@
+import re
+
+
 DEFAULT_SCHEMA = "http://www.legislation.gov.uk/namespaces/legislation"
 
 
@@ -26,3 +29,9 @@ def get_elements_recursive(parent, tag, schema=None):
             data.append(child)
         data = data + get_elements_recursive(child, tag, schema)
     return data
+
+
+def get_child_text(parent):
+    text = "".join(parent.itertext())
+    text = re.sub('\s+', ' ', text).strip()
+    return text

@@ -117,7 +117,7 @@
                   <td xmlns:fo="http://www.w3.org/1999/XSL/Format" rowspan="1" colspan="1" fo:border-top-style="solid" fo:border-top-width="0.5pt" fo:border-top-color="black">1</td>
                 </tr>
                 <tr>
-                  <td rowspan="1" colspan="1">St John’s</td>
+                  <td rowspan="1" colspan="1"><Abbreviation>St John’s</Abbreviation></td>
                   <td rowspan="1" colspan="1">3</td>
                 </tr>
                 <tr>

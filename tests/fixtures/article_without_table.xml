@@ -90,7 +90,7 @@
                 <P3 DocumentURI="http://www.legislation.gov.uk/uksi/2017/1270/article/3/2/made" IdURI="http://www.legislation.gov.uk/id/uksi/2017/1270/article/3/2" id="article-3-2-b">
                   <Pnumber>b</Pnumber>
                   <P3para>
-                    <Text>St John’s;</Text>
+                    <Text><Abbreviation>St John’s</Abbreviation>;</Text>
                   </P3para>
                 </P3>
                 <P3 DocumentURI="http://www.legislation.gov.uk/uksi/2017/1270/article/3/2/made" IdURI="http://www.legislation.gov.uk/id/uksi/2017/1270/article/3/2" id="article-3-2-c">

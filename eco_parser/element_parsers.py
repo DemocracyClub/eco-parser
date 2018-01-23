@@ -1,6 +1,10 @@
 import abc
-import re
-from eco_parser.core import get_single_element, get_elements_recursive, ParseError
+from eco_parser.core import (
+    get_single_element,
+    get_elements_recursive,
+    get_child_text,
+    ParseError
+)
 
 
 class ElementParser(metaclass=abc.ABCMeta):
@@ -19,9 +23,7 @@ class TableParser(ElementParser):
         thead = get_single_element(self.element, 'thead', schema='http://www.w3.org/1999/xhtml')
         headers = []
         for th in thead[0]:
-            text = "".join(th.itertext())
-            text = re.sub('\s+', ' ', text).strip()
-            headers.append(text)
+            headers.append(get_child_text(th))
         return tuple(th for th in headers)
 
     def is_header(self, row):
@@ -36,7 +38,7 @@ class TableParser(ElementParser):
         data = []
         for row in tbody:
             if not self.is_header(row):
-                data.append(tuple(col.text for col in row))
+                data.append(tuple(get_child_text(col) for col in row))
         return data
 
     def parse(self):
@@ -47,7 +49,7 @@ class BodyParser(ElementParser):
 
     def parse(self):
         elements = get_elements_recursive(self.element, 'Text')
-        return [(el.text.strip().rstrip(',.;'),) for el in elements]
+        return [(get_child_text(el).strip().rstrip(',.;'),) for el in elements]
 
 
 class ElementParserFactory:

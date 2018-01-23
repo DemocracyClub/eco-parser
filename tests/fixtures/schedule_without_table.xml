@@ -82,7 +82,7 @@
           <P1 DocumentURI="http://www.legislation.gov.uk/uksi/2017/477/schedule/1/paragraph/1/made" IdURI="http://www.legislation.gov.uk/id/uksi/2017/477/schedule/1/paragraph/1" id="schedule-1-paragraph-2">
             <Pnumber>2</Pnumber>
             <P1para>
-              <Text>St John’s.</Text>
+              <Text><Abbreviation>St John’s</Abbreviation>.</Text>
             </P1para>
           </P1>
           <P1 DocumentURI="http://www.legislation.gov.uk/uksi/2017/477/schedule/1/paragraph/1/made" IdURI="http://www.legislation.gov.uk/id/uksi/2017/477/schedule/1/paragraph/1" id="schedule-1-paragraph-3">
