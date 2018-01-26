@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Legislation xmlns="http://www.legislation.gov.uk/namespaces/legislation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" DocumentURI="http://www.legislation.gov.uk/uksi/2017/1067/made" IdURI="http://www.legislation.gov.uk/id/uksi/2017/1067" NumberOfProvisions="4" xsi:schemaLocation="http://www.legislation.gov.uk/namespaces/legislation http://www.legislation.gov.uk/schema/legislation.xsd" SchemaVersion="1.0" xml:base="http://www.legislation.gov.uk/id/uksi/2017/1067">
+  <ukm:Metadata xmlns:ukm="http://www.legislation.gov.uk/namespaces/metadata" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dct="http://purl.org/dc/terms/">
+    <dc:identifier>http://www.legislation.gov.uk/uksi/2017/1067/schedule/1/made</dc:identifier>
+    <dc:title>The Foo Town (Electoral Changes) Order 2017</dc:title>
+    <dc:language>en</dc:language>
+    <dc:publisher>Queen's Printer of Acts of Parliament</dc:publisher>
+    <dc:modified>2017-11-07</dc:modified>
+    <dc:subject scheme="SIheading">LOCAL GOVERNMENT, ENGLAND</dc:subject>
+    <dc:description>This Order makes changes to electoral arrangements for the borough of Allerdale following recommendations made by the Local Government Boundary Commission for England. The area of the borough remains unchanged. The changes made by this Order apply in respect of local government elections held on and after the ordinary day of election of councillors in 2019.</dc:description>
+    <atom:link rel="self" type="application/xml" href="http://www.legislation.gov.uk/uksi/2017/1067/schedule/1/made/data.xml" />
+    <atom:link rel="http://www.legislation.gov.uk/def/navigation/resources" href="http://www.legislation.gov.uk/uksi/2017/1067/resources" title="More Resources" />
+    <atom:link rel="http://www.legislation.gov.uk/def/navigation/memorandum" href="http://www.legislation.gov.uk/uksi/2017/1067/memorandum" title="Explanatory Memorandum" />
+    <atom:link rel="http://www.legislation.gov.uk/def/navigation/memorandum/toc" href="http://www.legislation.gov.uk/uksi/2017/1067/memorandum/contents" title="Explanatory Memorandum Table of Contents" />
+    <atom:link rel="http://www.legislation.gov.uk/def/navigation/act" href="http://www.legislation.gov.uk/uksi/2017/1067/made" title="whole act" />
+    <atom:link rel="http://www.legislation.gov.uk/def/navigation/introduction" href="http://www.legislation.gov.uk/uksi/2017/1067/introduction/made" title="introduction" />
+    <atom:link rel="http://www.legislation.gov.uk/def/navigation/signature" href="http://www.legislation.gov.uk/uksi/2017/1067/signature/made" title="signature" />
+    <atom:link rel="http://www.legislation.gov.uk/def/navigation/note" href="http://www.legislation.gov.uk/uksi/2017/1067/note/made" title="note" />
+    <atom:link rel="http://www.legislation.gov.uk/def/navigation/body" href="http://www.legislation.gov.uk/uksi/2017/1067/body/made" title="body" />
+    <atom:link rel="http://www.legislation.gov.uk/def/navigation/schedules" href="http://www.legislation.gov.uk/uksi/2017/1067/schedules/made" title="schedules" />
+    <atom:link rel="alternate" type="application/rdf+xml" href="http://www.legislation.gov.uk/uksi/2017/1067/schedule/1/made/data.rdf" title="RDF/XML" />
+    <atom:link rel="alternate" type="application/akn+xml" href="http://www.legislation.gov.uk/uksi/2017/1067/schedule/1/made/data.akn" title="AKN" />
+    <atom:link rel="alternate" type="application/xhtml+xml" href="http://www.legislation.gov.uk/uksi/2017/1067/schedule/1/made/data.xht" title="HTML snippet" />
+    <atom:link rel="alternate" type="application/pdf" href="http://www.legislation.gov.uk/uksi/2017/1067/schedule/1/made/data.pdf" title="PDF" />
+    <atom:link rel="alternate" type="application/akn+xhtml" href="http://www.legislation.gov.uk/uksi/2017/1067/schedule/1/made/data.html" title="HTML5 snippet" />
+    <atom:link rel="http://purl.org/dc/terms/tableOfContents" hreflang="en" href="http://www.legislation.gov.uk/uksi/2017/1067/contents/made" title="Table of Contents" />
+    <atom:link rel="http://www.legislation.gov.uk/def/navigation/supersedes" href="http://www.legislation.gov.uk/id/ukdsi/2017/9780111159040" title="The Allerdale (Electoral Changes) Order 2017" />
+    <atom:link rel="up" href="http://www.legislation.gov.uk/uksi/2017/1067/made" title="Entire legislation" />
+    <atom:link rel="prev" href="http://www.legislation.gov.uk/uksi/2017/1067/signature/made" title="Signature; Signature" />
+    <atom:link rel="prevInForce" href="http://www.legislation.gov.uk/uksi/2017/1067/article/4/made" title="Provision; Article 4" />
+    <atom:link rel="next" href="http://www.legislation.gov.uk/uksi/2017/1067/schedule/2/made" title="Schedule; Schedule 2" />
+    <atom:link rel="nextInForce" href="http://www.legislation.gov.uk/uksi/2017/1067/schedule/2/made" title="Schedule; Schedule 2" />
+    <ukm:SecondaryMetadata>
+      <ukm:DocumentClassification>
+        <ukm:DocumentCategory Value="secondary" />
+        <ukm:DocumentMainType Value="UnitedKingdomStatutoryInstrument" />
+        <ukm:DocumentStatus Value="final" />
+        <ukm:DocumentMinorType Value="order" />
+      </ukm:DocumentClassification>
+      <ukm:Year Value="2017" />
+      <ukm:Number Value="1067" />
+      <ukm:Made Date="2017-11-05" />
+      <ukm:ISBN Value="9780111161333" />
+    </ukm:SecondaryMetadata>
+    <ukm:Supersedes URI="http://www.legislation.gov.uk/id/ukdsi/2017/9780111159040">
+      <dc:title>The Foo Town (Electoral Changes) Order 2017</dc:title>
+      <ukm:DocumentMainType Value="UnitedKingdomDraftStatutoryInstrument" />
+      <ukm:Year Value="2017" />
+      <ukm:ISBN Value="9780111159040" />
+    </ukm:Supersedes>
+    <ukm:Notes>
+      <ukm:Note IdURI="http://www.legislation.gov.uk/id/uksi/2017/1067/notes" />
+      <ukm:Alternatives>
+        <ukm:Alternative URI="http://www.legislation.gov.uk/uksi/2017/1067/pdfs/uksiem_20171067_en.pdf" Date="2017-11-08" Title="UK Explanatory Memorandum" Size="39376" />
+      </ukm:Alternatives>
+    </ukm:Notes>
+    <ukm:Alternatives>
+      <ukm:Alternative URI="http://www.legislation.gov.uk/uksi/2017/1067/pdfs/uksi_20171067_en.pdf" Date="2017-11-08" Size="42757" />
+    </ukm:Alternatives>
+    <ukm:Statistics>
+      <ukm:TotalParagraphs Value="4" />
+      <ukm:BodyParagraphs Value="4" />
+      <ukm:ScheduleParagraphs Value="0" />
+      <ukm:TotalImages Value="0" />
+    </ukm:Statistics>
+  </ukm:Metadata>
+  <Secondary>
+    <Schedules>
+      <Schedule DocumentURI="http://www.legislation.gov.uk/uksi/2017/1067/schedule/1/made" IdURI="http://www.legislation.gov.uk/id/uksi/2017/1067/schedule/1" id="schedule-1">
+        <Number>SCHEDULE 1</Number>
+        <TitleBlock>
+          <Title>Names of wards and number of councillors</Title>
+        </TitleBlock>
+        <Reference>Article 3</Reference>
+        <ScheduleBody>
+          <Tabular Orientation="portrait">
+            <table xmlns="http://www.w3.org/1999/xhtml" cols="2">
+              <colgroup>
+                <col width="196.4pt" />
+                <col width="207.6pt" />
+              </colgroup>
+              <thead>
+                <tr>
+                  <th xmlns:fo="http://www.w3.org/1999/XSL/Format" rowspan="1" colspan="1" fo:border-top-style="solid" fo:border-top-width="0.5pt" fo:border-top-color="black">
+                    <Para xmlns="http://www.legislation.gov.uk/namespaces/legislation">
+                      <Text>
+                        <Emphasis>(1)</Emphasis>
+                      </Text>
+                    </Para>
+                    <Para xmlns="http://www.legislation.gov.uk/namespaces/legislation">
+                      <Text>
+                        <Emphasis>Name of borough ward</Emphasis>
+                      </Text>
+                    </Para>
+                  </th>
+                  <th xmlns:fo="http://www.w3.org/1999/XSL/Format" rowspan="1" colspan="1" fo:border-top-style="solid" fo:border-top-width="0.5pt" fo:border-top-color="black">
+                    <Para xmlns="http://www.legislation.gov.uk/namespaces/legislation">
+                      <Text>
+                        <Emphasis>(2)</Emphasis>
+                      </Text>
+                    </Para>
+                    <Para xmlns="http://www.legislation.gov.uk/namespaces/legislation">
+                      <Text>
+                        <Emphasis>Number of councillors</Emphasis>
+                      </Text>
+                    </Para>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td xmlns:fo="http://www.w3.org/1999/XSL/Format" rowspan="1" colspan="1" fo:border-top-style="solid" fo:border-top-width="0.5pt" fo:border-top-color="black" fo:border-bottom-style="solid" fo:border-bottom-width="0.5pt" fo:border-bottom-color="black">
+                    <Para xmlns="http://www.legislation.gov.uk/namespaces/legislation"><Text>Crummock &amp; Derwent Valley</Text></Para>
+                    <Para xmlns="http://www.legislation.gov.uk/namespaces/legislation"><Text>St John’s</Text></Para>
+                    <Para xmlns="http://www.legislation.gov.uk/namespaces/legislation"><Text><Strong>Sub Heading 1</Strong></Text></Para>
+                    <Para xmlns="http://www.legislation.gov.uk/namespaces/legislation"><Text>Warnell</Text></Para>
+                    <Para xmlns="http://www.legislation.gov.uk/namespaces/legislation"><Text>Westward Ho!</Text></Para>
+                    <Para xmlns="http://www.legislation.gov.uk/namespaces/legislation"><Text>Audley &amp; Queen’s Park</Text></Para>
+                  </td>
+                  <td xmlns:fo="http://www.w3.org/1999/XSL/Format" rowspan="1" colspan="1" fo:border-top-style="solid" fo:border-top-width="0.5pt" fo:border-top-color="black" fo:border-bottom-style="solid" fo:border-bottom-width="0.5pt" fo:border-bottom-color="black">
+                    <Para xmlns="http://www.legislation.gov.uk/namespaces/legislation"><Text>1</Text></Para>
+                    <Para xmlns="http://www.legislation.gov.uk/namespaces/legislation"><Text>3</Text></Para>
+                    <Para xmlns="http://www.legislation.gov.uk/namespaces/legislation"><Text>1</Text></Para>
+                    <Para xmlns="http://www.legislation.gov.uk/namespaces/legislation"><Text>2</Text></Para>
+                    <Para xmlns="http://www.legislation.gov.uk/namespaces/legislation"><Text>2</Text></Para>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </Tabular>
+        </ScheduleBody>
+      </Schedule>
+    </Schedules>
+  </Secondary>
+</Legislation>

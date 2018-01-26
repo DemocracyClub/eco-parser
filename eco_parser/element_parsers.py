@@ -1,5 +1,6 @@
 import abc
 from eco_parser.core import (
+    DEFAULT_SCHEMA,
     get_single_element,
     get_elements_recursive,
     get_child_text,
@@ -19,6 +20,10 @@ class ElementParser(metaclass=abc.ABCMeta):
 
 class TableParser(ElementParser):
 
+    FORMAT_UNKNOWN        = 0
+    FORMAT_STANDARD_TABLE = 1
+    FORMAT_ONE_ROW_PARA   = 2
+
     def parse_head(self):
         thead = get_single_element(self.element, 'thead', schema='http://www.w3.org/1999/xhtml')
         headers = []
@@ -33,13 +38,54 @@ class TableParser(ElementParser):
                 header_row = True
         return header_row
 
-    def parse_body(self):
-        tbody = get_single_element(self.element, 'tbody', schema='http://www.w3.org/1999/xhtml')
+    def get_table_format(self, tbody):
+        if len(tbody) == 1:
+            para_tags = tbody.xpath('//x:Para', namespaces={'x': DEFAULT_SCHEMA})
+            if len(para_tags) > 0:
+                return self.FORMAT_ONE_ROW_PARA
+        elif len(tbody) > 1:
+            return self.FORMAT_STANDARD_TABLE
+        return self.FORMAT_UNKNOWN
+
+    def parse_standard_table(self, tbody):
         data = []
         for row in tbody:
             if not self.is_header(row):
                 data.append(tuple(get_child_text(col) for col in row))
         return data
+
+    def parse_one_row_table(self, tbody):
+        data = []
+        tr = tbody[0]
+
+        i = 0
+        for td in tr:
+            data.append([])
+            for line in td:
+                text = get_single_element(line, 'Text')
+                data[i].append(get_child_text(text))
+            i = i+1
+
+        # check all the lists we've found are the same length
+        # if not, throw an error
+        len0 = len(data[0])
+        for j in range(0, i):
+            if len(data[j]) != len0:
+                raise ParseError(
+                    "Expected %i elements, found %i" % (len0, len(data[j])), 0)
+
+        # transpose rows and columns
+        return list(map(tuple, zip(*data)))
+
+    def parse_body(self):
+        tbody = get_single_element(self.element, 'tbody', schema='http://www.w3.org/1999/xhtml')
+        table_format = self.get_table_format(tbody)
+        if table_format == self.FORMAT_ONE_ROW_PARA:
+            return self.parse_one_row_table(tbody)
+        elif table_format == self.FORMAT_STANDARD_TABLE:
+            return self.parse_standard_table(tbody)
+        elif table_format == self.FORMAT_UNKNOWN:
+            raise ParseError('Could not detect table format' ,0)
 
     def parse(self):
         try:
