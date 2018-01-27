@@ -63,7 +63,6 @@ Data Parsed from legislation.gov.uk is covered by the [Open Government Licence v
 Run the tests locally:
 
 ```bash
-pipenv install
 ./run_tests.py
 ```
 
