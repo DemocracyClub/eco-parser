@@ -6,6 +6,7 @@ __pycache__/
 build/
 dist/
 eco_parser.egg-info/
+README.rst
 
 # pipenv lockfile
 Pipfile.lock
