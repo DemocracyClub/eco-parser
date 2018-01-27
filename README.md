@@ -19,7 +19,7 @@ This package provides some routines to help with parsing ward and division names
 
 If you need the official names of electoral divisions that are already in use, get the data from [OS Boundary Line](https://www.ordnancesurvey.co.uk/business-and-government/products/boundary-line.html), [ONS Geography](http://geoportal.statistics.gov.uk/) or a web service like [mapit](https://mapit.mysociety.org/). This information is already published as convenient machine-readable structured data.
 
-If you need the official names of electoral divisions that are not in use yet, this package my be able to help you parse them from legislation.
+If you need the official names of electoral divisions that are not in use yet, this package may be able to help you parse them from legislation.
 
 ## Installation
 
