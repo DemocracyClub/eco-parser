@@ -24,12 +24,12 @@ If you need the official names of electoral divisions that are not in use yet, t
 ## Installation
 
 ```bash
-pip install git+git://github.com/DemocracyClub/eco-parser.git
+pip install eco-parser
 ```
 
 ## Platform Support
 
-`eco_parser` is tested under Python 3.4, 3.5 and 3.6
+`eco-parser` is tested under Python 3.4, 3.5 and 3.6
 
 ## Usage
 
@@ -54,7 +54,7 @@ except ParseError:
 
 ## Licensing
 
-The `eco_parser` software is made available under the MIT License.
+The `eco-parser` software is made available under the MIT License.
 
 Data Parsed from legislation.gov.uk is covered by the [Open Government Licence v3](http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/). Your use of the data should comply with it.
 
