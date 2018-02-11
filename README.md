@@ -2,6 +2,9 @@
 
 [![Build Status](https://travis-ci.org/DemocracyClub/eco-parser.svg?branch=master)](https://travis-ci.org/DemocracyClub/eco-parser)
 [![Coverage Status](https://coveralls.io/repos/github/DemocracyClub/eco-parser/badge.svg?branch=master)](https://coveralls.io/github/DemocracyClub/eco-parser?branch=master)
+![PyPI Version](https://img.shields.io/pypi/v/eco-parser.svg)
+![License](https://img.shields.io/pypi/l/eco-parser.svg)
+![Python Support](https://img.shields.io/pypi/pyversions/eco-parser.svg)
 
 Parse ward lists from Electoral Change Orders on http://www.legislation.gov.uk/
 
@@ -26,10 +29,6 @@ If you need the official names of electoral divisions that are not in use yet, t
 ```bash
 pip install eco-parser
 ```
-
-## Platform Support
-
-`eco-parser` is tested under Python 3.4, 3.5 and 3.6
 
 ## Usage
 
