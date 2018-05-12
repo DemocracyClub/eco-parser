@@ -30,6 +30,11 @@ setup(
         'lxml',
         'requests',
     ],
+    extras_require={
+        'testing': [
+            'python-coveralls',
+        ]
+    },
     classifiers=[
         'License :: OSI Approved :: MIT License',
         'Programming Language :: Python',

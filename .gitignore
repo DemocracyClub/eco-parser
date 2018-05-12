@@ -9,6 +9,7 @@ eco_parser.egg-info/
 README.rst
 
 # pipenv lockfile
+Pipfile
 Pipfile.lock
 
 # test coverage
