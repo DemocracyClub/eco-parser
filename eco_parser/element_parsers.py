@@ -69,11 +69,11 @@ class TableParser(ElementParser):
 
         # check all the lists we've found are the same length
         # if not, throw an error
-        len0 = len(data[0])
+        expected_length = len(data[0])
         for j in range(0, i):
-            if len(data[j]) != len0:
+            if len(data[j]) != expected_length:
                 raise ParseError(
-                    "Expected %i elements, found %i" % (len0, len(data[j])), 0)
+                    "Expected %i elements, found %i" % (expected_length, len(data[j])), 0)
 
         # transpose rows and columns
         return list(map(tuple, zip(*data)))
