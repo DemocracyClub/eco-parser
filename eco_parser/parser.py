@@ -17,17 +17,17 @@ class EcoParser:
 
     def parse_schedule(self):
         tree = etree.fromstring(self.get_data())
-        secondary = get_single_element(tree, 'Secondary')
-        schedules = get_single_element(secondary, 'Schedules')
-        schedule = get_single_element(schedules, 'Schedule')
-        schedule_body = get_single_element(schedule, 'ScheduleBody')
+        secondary = get_single_element(tree, 'l:Secondary')
+        schedules = get_single_element(secondary, 'l:Schedules')
+        schedule = get_single_element(schedules, 'l:Schedule')
+        schedule_body = get_single_element(schedule, 'l:ScheduleBody')
         p = ElementParserFactory.create(schedule_body)
         return p.parse()
 
     def parse_article(self):
         tree = etree.fromstring(self.get_data())
-        secondary = get_single_element(tree, 'Secondary')
-        body = get_single_element(secondary, 'Body')
+        secondary = get_single_element(tree, 'l:Secondary')
+        body = get_single_element(secondary, 'l:Body')
         p = ElementParserFactory.create(body)
         return p.parse()
 

@@ -1,9 +1,10 @@
 import abc
 from eco_parser.core import (
-    DEFAULT_SCHEMA,
+    NAMESPACES,
     get_single_element,
     get_elements_recursive,
     get_child_text,
+    expand_namespace,
     ParseError
 )
 
@@ -25,7 +26,7 @@ class TableParser(ElementParser):
     FORMAT_ONE_ROW_PARA   = 2
 
     def parse_head(self):
-        thead = get_single_element(self.element, 'thead', schema='http://www.w3.org/1999/xhtml')
+        thead = get_single_element(self.element, 'html:thead')
         headers = []
         for th in thead[0]:
             headers.append(get_child_text(th))
@@ -34,13 +35,13 @@ class TableParser(ElementParser):
     def is_header(self, row):
         header_row = False
         for col in row:
-            if col.tag == '{http://www.w3.org/1999/xhtml}th':
+            if col.tag == expand_namespace('html:th'):
                 header_row = True
         return header_row
 
     def get_table_format(self, tbody):
         if len(tbody) == 1:
-            para_tags = tbody.xpath('//x:Para', namespaces={'x': DEFAULT_SCHEMA})
+            para_tags = tbody.xpath('//l:Para', namespaces=NAMESPACES)
             if len(para_tags) > 0:
                 return self.FORMAT_ONE_ROW_PARA
         elif len(tbody) > 1:
@@ -62,7 +63,7 @@ class TableParser(ElementParser):
         for td in tr:
             data.append([])
             for line in td:
-                text = get_single_element(line, 'Text')
+                text = get_single_element(line, 'l:Text')
                 data[i].append(get_child_text(text))
             i = i+1
 
@@ -78,7 +79,7 @@ class TableParser(ElementParser):
         return list(map(tuple, zip(*data)))
 
     def parse_body(self):
-        tbody = get_single_element(self.element, 'tbody', schema='http://www.w3.org/1999/xhtml')
+        tbody = get_single_element(self.element, 'html:tbody')
         table_format = self.get_table_format(tbody)
         if table_format == self.FORMAT_ONE_ROW_PARA:
             return self.parse_one_row_table(tbody)
@@ -98,7 +99,7 @@ class TableParser(ElementParser):
 class BodyParser(ElementParser):
 
     def parse(self):
-        elements = get_elements_recursive(self.element, 'Text')
+        elements = get_elements_recursive(self.element, 'l:Text')
         return [(get_child_text(el).strip().rstrip(',.;'),) for el in elements]
 
 
@@ -107,8 +108,8 @@ class ElementParserFactory:
     @staticmethod
     def create(element):
         try:
-            tabular = get_single_element(element, 'Tabular')
-            table = get_single_element(tabular, 'table', schema='http://www.w3.org/1999/xhtml')
+            tabular = get_single_element(element, 'l:Tabular')
+            table = get_single_element(tabular, 'html:table')
             return TableParser(table)
         except ParseError as e:
             if e.matches == 0:
