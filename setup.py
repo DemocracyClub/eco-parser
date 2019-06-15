@@ -34,6 +34,7 @@ setup(
     extras_require={
         'testing': [
             'python-coveralls',
+            'black',
         ]
     },
     classifiers=[
