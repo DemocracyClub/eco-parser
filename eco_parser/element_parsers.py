@@ -5,12 +5,11 @@ from eco_parser.core import (
     get_elements_recursive,
     get_child_text,
     expand_namespace,
-    ParseError
+    ParseError,
 )
 
 
 class ElementParser(metaclass=abc.ABCMeta):
-
     def __init__(self, element):
         self.element = element
 
@@ -21,12 +20,12 @@ class ElementParser(metaclass=abc.ABCMeta):
 
 class TableParser(ElementParser):
 
-    FORMAT_UNKNOWN        = 0
+    FORMAT_UNKNOWN = 0
     FORMAT_STANDARD_TABLE = 1
-    FORMAT_ONE_ROW_PARA   = 2
+    FORMAT_ONE_ROW_PARA = 2
 
     def parse_head(self):
-        thead = get_single_element(self.element, 'html:thead')
+        thead = get_single_element(self.element, "html:thead")
         headers = []
         for th in thead[0]:
             headers.append(get_child_text(th))
@@ -35,13 +34,13 @@ class TableParser(ElementParser):
     def is_header(self, row):
         header_row = False
         for col in row:
-            if col.tag == expand_namespace('html:th'):
+            if col.tag == expand_namespace("html:th"):
                 header_row = True
         return header_row
 
     def get_table_format(self, tbody):
         if len(tbody) == 1:
-            para_tags = tbody.xpath('//l:Para', namespaces=NAMESPACES)
+            para_tags = tbody.xpath("//l:Para", namespaces=NAMESPACES)
             if len(para_tags) > 0:
                 return self.FORMAT_ONE_ROW_PARA
         elif len(tbody) > 1:
@@ -63,9 +62,9 @@ class TableParser(ElementParser):
         for td in tr:
             data.append([])
             for line in td:
-                text = get_single_element(line, 'l:Text')
+                text = get_single_element(line, "l:Text")
                 data[i].append(get_child_text(text))
-            i = i+1
+            i = i + 1
 
         # check all the lists we've found are the same length
         # if not, throw an error
@@ -73,20 +72,22 @@ class TableParser(ElementParser):
         for j in range(0, i):
             if len(data[j]) != expected_length:
                 raise ParseError(
-                    "Expected %i elements, found %i" % (expected_length, len(data[j])), 0)
+                    "Expected %i elements, found %i" % (expected_length, len(data[j])),
+                    0,
+                )
 
         # transpose rows and columns
         return list(map(tuple, zip(*data)))
 
     def parse_body(self):
-        tbody = get_single_element(self.element, 'html:tbody')
+        tbody = get_single_element(self.element, "html:tbody")
         table_format = self.get_table_format(tbody)
         if table_format == self.FORMAT_ONE_ROW_PARA:
             return self.parse_one_row_table(tbody)
         elif table_format == self.FORMAT_STANDARD_TABLE:
             return self.parse_standard_table(tbody)
         elif table_format == self.FORMAT_UNKNOWN:
-            raise ParseError('Could not detect table format' ,0)
+            raise ParseError("Could not detect table format", 0)
 
     def parse(self):
         try:
@@ -97,19 +98,17 @@ class TableParser(ElementParser):
 
 
 class BodyParser(ElementParser):
-
     def parse(self):
-        elements = get_elements_recursive(self.element, 'l:Text')
-        return [(get_child_text(el).strip().rstrip(',.;'),) for el in elements]
+        elements = get_elements_recursive(self.element, "l:Text")
+        return [(get_child_text(el).strip().rstrip(",.;"),) for el in elements]
 
 
 class ElementParserFactory:
-
     @staticmethod
     def create(element):
         try:
-            tabular = get_single_element(element, 'l:Tabular')
-            table = get_single_element(tabular, 'html:table')
+            tabular = get_single_element(element, "l:Tabular")
+            table = get_single_element(tabular, "html:table")
             return TableParser(table)
         except ParseError as e:
             if e.matches == 0:
