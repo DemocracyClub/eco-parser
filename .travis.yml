@@ -10,5 +10,6 @@ install:
   - pip install -e .[testing]
 script:
   - coverage run --source=eco_parser ./run_tests.py
+  - black --check .
 after_success:
   - coveralls
