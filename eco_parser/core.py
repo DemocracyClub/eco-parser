@@ -28,22 +28,7 @@ def get_single_element(parent, tag):
     return elements[0]
 
 
-def get_elements_recursive(parent, tag):
-    data = []
-    target = expand_namespace(tag)
-    for child in parent:
-        if child.tag == target:
-            data.append(child)
-        data = data + get_elements_recursive(child, tag)
-    return data
-
-
 def get_child_text(parent):
     text = "".join(parent.itertext())
     text = re.sub("\s+", " ", text).strip()
     return text
-
-
-def expand_namespace(nstag):
-    ns, tag = nstag.split(":", 1)
-    return "{%s}%s" % (NAMESPACES[ns], tag)

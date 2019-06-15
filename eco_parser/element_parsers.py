@@ -1,12 +1,5 @@
 import abc
-from eco_parser.core import (
-    NAMESPACES,
-    get_single_element,
-    get_elements_recursive,
-    get_child_text,
-    expand_namespace,
-    ParseError,
-)
+from eco_parser.core import NAMESPACES, get_single_element, get_child_text, ParseError
 
 
 class ElementParser(metaclass=abc.ABCMeta):
@@ -32,11 +25,9 @@ class TableParser(ElementParser):
         return tuple(th for th in headers)
 
     def is_header(self, row):
-        header_row = False
-        for col in row:
-            if col.tag == expand_namespace("html:th"):
-                header_row = True
-        return header_row
+        if len(row.xpath("./html:th", namespaces=NAMESPACES)) > 0:
+            return True
+        return False
 
     def get_table_format(self, tbody):
         if len(tbody) == 1:
@@ -99,7 +90,7 @@ class TableParser(ElementParser):
 
 class BodyParser(ElementParser):
     def parse(self):
-        elements = get_elements_recursive(self.element, "l:Text")
+        elements = self.element.xpath("//l:Text", namespaces=NAMESPACES)
         return [(get_child_text(el).strip().rstrip(",.;"),) for el in elements]
 
 
