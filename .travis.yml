@@ -5,11 +5,16 @@ python:
   - '3.5'
   - '3.6'
   - '3.7'
+matrix:
+  include:
+    - python: '3.7'
+      env: BLACK=1
 install:
   - pip install --upgrade pip
   - pip install -e .[testing]
 script:
   - coverage run --source=eco_parser ./run_tests.py
-  - black --check .
+  - sh -c "if [ '$BLACK' = '1' ]; then pip install black ; fi"
+  - sh -c "if [ '$BLACK' = '1' ]; then black --check . ; fi"
 after_success:
   - coveralls
