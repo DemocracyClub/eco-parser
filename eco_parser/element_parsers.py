@@ -19,10 +19,7 @@ class TableParser(ElementParser):
 
     def parse_head(self):
         thead = get_single_element(self.element, "html:thead")
-        headers = []
-        for th in thead[0]:
-            headers.append(get_child_text(th))
-        return tuple(th for th in headers)
+        return tuple(get_child_text(th) for th in thead[0])
 
     def is_header(self, row):
         if len(row.xpath("./html:th", namespaces=NAMESPACES)) > 0:
