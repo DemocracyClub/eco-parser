@@ -16,7 +16,7 @@ def _get_description():
 
 setup(
     name="eco_parser",
-    version="0.1.1",
+    version="0.2.0",
     author="chris48s",
     license="MIT",
     url="https://github.com/DemocracyClub/eco-parser/",
@@ -31,9 +31,9 @@ setup(
         "License :: OSI Approved :: MIT License",
         "Programming Language :: Python",
         "Programming Language :: Python :: 3",
-        "Programming Language :: Python :: 3.4",
         "Programming Language :: Python :: 3.5",
         "Programming Language :: Python :: 3.6",
         "Programming Language :: Python :: 3.7",
+        "Programming Language :: Python :: 3.8",
     ],
 )
