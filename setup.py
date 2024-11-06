@@ -26,7 +26,7 @@ setup(
     long_description_content_type="text/markdown",
     entry_points={"console_scripts": ["eco_parser = eco_parser.__main__:main"]},
     install_requires=["lxml", "requests"],
-    extras_require={"testing": ["coveralls"]},
+    extras_require={"testing": ["coveralls"], "development": ["ruff==0.3.7"],},
     classifiers=[
         "License :: OSI Approved :: MIT License",
         "Programming Language :: Python",
