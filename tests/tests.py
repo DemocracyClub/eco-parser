@@ -1,7 +1,7 @@
 import os
 import unittest
-from eco_parser import EcoParser, ParseError
 
+from eco_parser import EcoParser, ParseError
 
 SCHEDULE_WITH_TABLE = (
     "http://www.legislation.gov.uk/uksi/2017/1067/schedule/1/made/data.xml"

@@ -1,9 +1,10 @@
 import abc
+
 from eco_parser.core import (
     NAMESPACES,
-    get_single_element,
-    get_child_text,
     ParseError,
+    get_child_text,
+    get_single_element,
 )
 
 

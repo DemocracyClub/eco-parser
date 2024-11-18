@@ -1,7 +1,9 @@
 import re
+
 import requests
 from lxml import etree
-from eco_parser.core import get_single_element, ParseError
+
+from eco_parser.core import ParseError, get_single_element
 from eco_parser.element_parsers import ElementParserFactory
 
 
