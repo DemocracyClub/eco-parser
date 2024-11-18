@@ -38,4 +38,6 @@ class EcoParser:
         elif re.match(article_pattern, self.url):
             return self.parse_article()
         else:
-            raise ParseError("Could not find a suitable parser for %s" % (self.url), 0)
+            raise ParseError(
+                "Could not find a suitable parser for %s" % (self.url), 0
+            )

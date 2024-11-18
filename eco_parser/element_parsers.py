@@ -1,5 +1,10 @@
 import abc
-from eco_parser.core import NAMESPACES, get_single_element, get_child_text, ParseError
+from eco_parser.core import (
+    NAMESPACES,
+    get_single_element,
+    get_child_text,
+    ParseError,
+)
 
 
 class ElementParser(metaclass=abc.ABCMeta):
@@ -12,7 +17,6 @@ class ElementParser(metaclass=abc.ABCMeta):
 
 
 class TableParser(ElementParser):
-
     FORMAT_UNKNOWN = 0
     FORMAT_STANDARD_TABLE = 1
     FORMAT_ONE_ROW_PARA = 2
@@ -60,7 +64,8 @@ class TableParser(ElementParser):
         for j in range(0, i):
             if len(data[j]) != expected_length:
                 raise ParseError(
-                    "Expected %i elements, found %i" % (expected_length, len(data[j])),
+                    "Expected %i elements, found %i"
+                    % (expected_length, len(data[j])),
                     0,
                 )
 

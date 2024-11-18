@@ -21,9 +21,7 @@ ONE_ROW_TABLE_VALID = (
 ONE_ROW_TABLE_INVALID = (
     "http://www.legislation.gov.uk/uksi/2016/657/schedule/1/made/data.xml"
 )
-UNKNOWN_TABLE_FORMAT = (
-    "http://www.legislation.gov.uk/uksi/no-example-of-this/schedule/1/made/data.xml"
-)
+UNKNOWN_TABLE_FORMAT = "http://www.legislation.gov.uk/uksi/no-example-of-this/schedule/1/made/data.xml"
 
 
 # stub parser implementation we can run tests against
@@ -96,8 +94,12 @@ class ParserTest(unittest.TestCase):
         p = StubParser(ARTICLE_WITHOUT_TABLE)
         self.assertSequenceEqual(
             [
-                ("The existing wards of the borough of Foo Town are abolished",),
-                ("The borough of Foo Town is divided into 5 wards as follows—",),
+                (
+                    "The existing wards of the borough of Foo Town are abolished",
+                ),
+                (
+                    "The borough of Foo Town is divided into 5 wards as follows—",
+                ),
                 ("Crummock & Derwent Valley",),
                 ("St John’s",),
                 ("Warnell",),
