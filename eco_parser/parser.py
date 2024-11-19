@@ -37,9 +37,9 @@ class EcoParser:
         article_pattern = r"http[s]?\:\/\/(www\.)?legislation\.gov\.uk\/(.)+\/article\/(.)+\/data\.xml"
         if re.match(schedule_pattern, self.url):
             return self.parse_schedule()
-        elif re.match(article_pattern, self.url):
+        if re.match(article_pattern, self.url):
             return self.parse_article()
-        else:
-            raise ParseError(
-                "Could not find a suitable parser for %s" % (self.url), 0
-            )
+
+        raise ParseError(
+            "Could not find a suitable parser for %s" % (self.url), 0
+        )

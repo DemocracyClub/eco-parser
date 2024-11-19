@@ -78,10 +78,9 @@ class TableParser(ElementParser):
         table_format = self.get_table_format(tbody)
         if table_format == self.FORMAT_ONE_ROW_PARA:
             return self.parse_one_row_table(tbody)
-        elif table_format == self.FORMAT_STANDARD_TABLE:
+        if table_format == self.FORMAT_STANDARD_TABLE:
             return self.parse_standard_table(tbody)
-        elif table_format == self.FORMAT_UNKNOWN:
-            raise ParseError("Could not detect table format", 0)
+        raise ParseError("Could not detect table format", 0)
 
     def parse(self):
         try:
@@ -107,5 +106,4 @@ class ElementParserFactory:
         except ParseError as e:
             if e.matches == 0:
                 return BodyParser(element)
-            else:
-                raise
+            raise e

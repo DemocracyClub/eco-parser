@@ -39,9 +39,10 @@ class StubParser(EcoParser):
         dirname = os.path.dirname(os.path.abspath(__file__))
         file_path = os.path.abspath(os.path.join(dirname, fixtures[self.url]))
         if self.url in fixtures:
-            return bytes(open(file_path, "r").read(), "utf-8")
-        else:
-            raise Exception("no test fixture defined for url '%s'" % self.url)
+            with open(file_path, "r", encoding="utf-8") as file:
+                return bytes(file.read(), "utf-8")
+
+        raise Exception("no test fixture defined for url '%s'" % self.url)
 
 
 class ParserTest(unittest.TestCase):
