@@ -1,6 +1,6 @@
 # ECO Parser
 
-[![Build Status](https://travis-ci.org/DemocracyClub/eco-parser.svg?branch=master)](https://travis-ci.org/DemocracyClub/eco-parser)
+[![Run tests](https://github.com/DemocracyClub/eco-parser/actions/workflows/test.yml/badge.svg)](https://github.com/DemocracyClub/eco-parser/actions/workflows/test.yml)
 [![Coverage Status](https://coveralls.io/repos/github/DemocracyClub/eco-parser/badge.svg?branch=master)](https://coveralls.io/github/DemocracyClub/eco-parser?branch=master)
 ![PyPI Version](https://img.shields.io/pypi/v/eco-parser.svg)
 ![License](https://img.shields.io/pypi/l/eco-parser.svg)
