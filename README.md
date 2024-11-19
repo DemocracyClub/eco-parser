@@ -5,7 +5,6 @@
 ![PyPI Version](https://img.shields.io/pypi/v/eco-parser.svg)
 ![License](https://img.shields.io/pypi/l/eco-parser.svg)
 ![Python Support](https://img.shields.io/pypi/pyversions/eco-parser.svg)
-![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)
 
 Parse ward lists from Electoral Change Orders on http://www.legislation.gov.uk/
 
