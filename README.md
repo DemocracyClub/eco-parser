@@ -1,11 +1,9 @@
 # ECO Parser
 
-[![Build Status](https://travis-ci.org/DemocracyClub/eco-parser.svg?branch=master)](https://travis-ci.org/DemocracyClub/eco-parser)
-[![Coverage Status](https://coveralls.io/repos/github/DemocracyClub/eco-parser/badge.svg?branch=master)](https://coveralls.io/github/DemocracyClub/eco-parser?branch=master)
+[![Run tests](https://github.com/DemocracyClub/eco-parser/actions/workflows/test.yml/badge.svg)](https://github.com/DemocracyClub/eco-parser/actions/workflows/test.yml)
 ![PyPI Version](https://img.shields.io/pypi/v/eco-parser.svg)
 ![License](https://img.shields.io/pypi/l/eco-parser.svg)
 ![Python Support](https://img.shields.io/pypi/pyversions/eco-parser.svg)
-![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)
 
 Parse ward lists from Electoral Change Orders on http://www.legislation.gov.uk/
 

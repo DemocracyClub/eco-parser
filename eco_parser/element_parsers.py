@@ -1,5 +1,11 @@
 import abc
-from eco_parser.core import NAMESPACES, get_single_element, get_child_text, ParseError
+
+from eco_parser.core import (
+    NAMESPACES,
+    ParseError,
+    get_child_text,
+    get_single_element,
+)
 
 
 class ElementParser(metaclass=abc.ABCMeta):
@@ -12,7 +18,6 @@ class ElementParser(metaclass=abc.ABCMeta):
 
 
 class TableParser(ElementParser):
-
     FORMAT_UNKNOWN = 0
     FORMAT_STANDARD_TABLE = 1
     FORMAT_ONE_ROW_PARA = 2
@@ -60,7 +65,8 @@ class TableParser(ElementParser):
         for j in range(0, i):
             if len(data[j]) != expected_length:
                 raise ParseError(
-                    "Expected %i elements, found %i" % (expected_length, len(data[j])),
+                    "Expected %i elements, found %i"
+                    % (expected_length, len(data[j])),
                     0,
                 )
 
@@ -72,10 +78,9 @@ class TableParser(ElementParser):
         table_format = self.get_table_format(tbody)
         if table_format == self.FORMAT_ONE_ROW_PARA:
             return self.parse_one_row_table(tbody)
-        elif table_format == self.FORMAT_STANDARD_TABLE:
+        if table_format == self.FORMAT_STANDARD_TABLE:
             return self.parse_standard_table(tbody)
-        elif table_format == self.FORMAT_UNKNOWN:
-            raise ParseError("Could not detect table format", 0)
+        raise ParseError("Could not detect table format", 0)
 
     def parse(self):
         try:
@@ -101,5 +106,4 @@ class ElementParserFactory:
         except ParseError as e:
             if e.matches == 0:
                 return BodyParser(element)
-            else:
-                raise
+            raise e

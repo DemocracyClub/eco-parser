@@ -1,7 +1,7 @@
 import os
 import unittest
-from eco_parser import EcoParser, ParseError
 
+from eco_parser import EcoParser, ParseError
 
 SCHEDULE_WITH_TABLE = (
     "http://www.legislation.gov.uk/uksi/2017/1067/schedule/1/made/data.xml"
@@ -21,9 +21,7 @@ ONE_ROW_TABLE_VALID = (
 ONE_ROW_TABLE_INVALID = (
     "http://www.legislation.gov.uk/uksi/2016/657/schedule/1/made/data.xml"
 )
-UNKNOWN_TABLE_FORMAT = (
-    "http://www.legislation.gov.uk/uksi/no-example-of-this/schedule/1/made/data.xml"
-)
+UNKNOWN_TABLE_FORMAT = "http://www.legislation.gov.uk/uksi/no-example-of-this/schedule/1/made/data.xml"
 
 
 # stub parser implementation we can run tests against
@@ -41,9 +39,10 @@ class StubParser(EcoParser):
         dirname = os.path.dirname(os.path.abspath(__file__))
         file_path = os.path.abspath(os.path.join(dirname, fixtures[self.url]))
         if self.url in fixtures:
-            return bytes(open(file_path, "r").read(), "utf-8")
-        else:
-            raise Exception("no test fixture defined for url '%s'" % self.url)
+            with open(file_path, "r", encoding="utf-8") as file:
+                return bytes(file.read(), "utf-8")
+
+        raise Exception("no test fixture defined for url '%s'" % self.url)
 
 
 class ParserTest(unittest.TestCase):
@@ -96,8 +95,12 @@ class ParserTest(unittest.TestCase):
         p = StubParser(ARTICLE_WITHOUT_TABLE)
         self.assertSequenceEqual(
             [
-                ("The existing wards of the borough of Foo Town are abolished",),
-                ("The borough of Foo Town is divided into 5 wards as follows—",),
+                (
+                    "The existing wards of the borough of Foo Town are abolished",
+                ),
+                (
+                    "The borough of Foo Town is divided into 5 wards as follows—",
+                ),
                 ("Crummock & Derwent Valley",),
                 ("St John’s",),
                 ("Warnell",),

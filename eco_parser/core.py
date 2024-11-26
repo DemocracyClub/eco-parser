@@ -30,5 +30,4 @@ def get_single_element(parent, tag):
 
 def get_child_text(parent):
     text = "".join(parent.itertext())
-    text = re.sub("\s+", " ", text).strip()
-    return text
+    return re.sub("\s+", " ", text).strip()
