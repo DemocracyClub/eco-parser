@@ -63,9 +63,3 @@ Run the tests locally:
 ```bash
 ./run_tests.py
 ```
-
-Build package locally:
-
-```bash
-./build.sh
-```
