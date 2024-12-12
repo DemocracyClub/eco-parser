@@ -1,5 +1,10 @@
 # Changelog
 
+## :package: [0.3.0](https://pypi.org/project/eco-parser/0.3.0/) - 2024-12-12
+
+* Tested on Python 3.10, 3.11, 3.12
+* Drop testing on Python <= 3.9
+
 ## :package: [0.2.0](https://pypi.org/project/eco-parser/0.2.0/) - 2019-10-16
 
 * Tested on Python 3.8

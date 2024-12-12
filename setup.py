@@ -17,7 +17,7 @@ def _get_description():
 
 setup(
     name="eco_parser",
-    version="0.2.0",
+    version="0.3.0",
     author="chris48s",
     license="MIT",
     url="https://github.com/DemocracyClub/eco-parser/",
